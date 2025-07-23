@@ -121,7 +121,7 @@ class RegistrationWindow(tk.Toplevel):
             if not response:
                 return
 
-        self.cap = cv2.VideoCapture(1)
+        self.cap = cv2.VideoCapture(0)
         if not self.cap.isOpened():
             messagebox.showerror("Error", "Could not open webcam.")
             return
@@ -216,7 +216,7 @@ class LoggingWindow(tk.Toplevel):
                 writer.writerow(["Timestamp", "Name", "Status"])
 
     def start_logging(self):
-        self.cap = cv2.VideoCapture(1)
+        self.cap = cv2.VideoCapture(0)
         if not self.cap.isOpened():
             messagebox.showerror("Error", "Could not open webcam.")
             self.on_close()
